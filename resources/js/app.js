@@ -1,7 +1,7 @@
 import { createApp, h } from 'vue';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import { ZiggyVue } from 'ziggy-js';
+import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/index.esm.js';
 import Ziggy from '@/ziggy';
 
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
