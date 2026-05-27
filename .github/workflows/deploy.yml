@@ -83,6 +83,7 @@ jobs:
 
             # Delete the old sections migration if it still exists from a previous rsync without --delete
             rm -f database/migrations/2026_05_25_131059_create_sections_table.php
+            rm -f database/migrations/2026_05_26_034154_create_timetable_entries_table.php
 
             # PENDING=$(php artisan migrate:status --pending | grep -cE "^\|")
             
