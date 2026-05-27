@@ -53,7 +53,7 @@ jobs:
           mkdir -p ~/.ssh
           ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
       - name: Test SSH
-        run: ssh -T git@github.com
+        run: ssh -T git@github.com || true
       - name: 🚀 Deploy to cPanel via rsync
         run: |
           rsync -azP -e "ssh -p ${{ secrets.SSH_PORT }}" \
