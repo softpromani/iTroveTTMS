@@ -7,7 +7,7 @@ use Inertia\Inertia;
 
 // Auth routes (custom, no Breeze)
 Route::get('login', [AuthenticatedSessionController::class, 'create'])->name('login');
-Route::post('login', [AuthenticatedSessionController::class, 'store'])->name('login');
+Route::post('login', [AuthenticatedSessionController::class, 'store']);
 Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 Route::get('/', function () {
     return view('welcome');
@@ -40,10 +40,6 @@ Route::prefix('admin')->middleware(['auth'])->name('admin.')->group(function () 
 
     Route::get('rooms/datatable', [\App\Http\Controllers\RoomController::class, 'datatable'])->name('rooms.datatable');
     Route::resource('rooms', \App\Http\Controllers\RoomController::class);
-    // Faculty routes
-    Route::resource('faculties', \App\Http\Controllers\FacultyController::class);
-    Route::get('faculties/datatable', [\App\Http\Controllers\FacultyController::class, 'datatable'])->name('faculties.datatable');
-
     Route::get('timetable-slots/datatable', [\App\Http\Controllers\TimetableSlotController::class, 'datatable'])->name('timetable-slots.datatable');
     Route::resource('timetable-slots', \App\Http\Controllers\TimetableSlotController::class);
 
