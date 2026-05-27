@@ -1,0 +1,100 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "admin-lte/dist/css/adminlte.min.css";
+
+:root {
+  --brand-primary: #0d6efd;
+  /* Primary brand color from innovationtrove.in */
+  --brand-secondary: #20c997;
+  /* Secondary brand color */
+}
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+  --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+  --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* Fix for Tailwind Preflight overriding FontAwesome font weights */
+html,
+body {
+  font-size: 87% !important;
+}
+
+.fas,
+.fa-solid,
+.fa {
+  font-weight: 900 !important;
+}
+
+.far,
+.fa-regular {
+  font-weight: 400 !important;
+}
+
+/* 
+ * Innovation Trove Custom Theme 
+ */
+:root {
+  --it-purple: #48126b;
+  --it-purple-dark: #3b0e59;
+  --it-purple-light: #5b1285;
+  --it-magenta: #d500d5;
+}
+
+/* Top Navbar */
+.custom-it-navbar {
+  background-color: var(--it-purple) !important;
+  border-bottom: 1px solid var(--it-purple-dark) !important;
+}
+
+/* Sidebar */
+.main-sidebar,
+.main-sidebar::before {
+  background-color: var(--it-purple-dark) !important;
+}
+
+.brand-link {
+  background-color: var(--it-purple-light) !important;
+  color: #fff !important;
+  border-bottom: 1px solid var(--it-purple-dark) !important;
+}
+
+/* Active Sidebar Link (Magenta Accent) */
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active,
+.sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
+  background-color: var(--it-magenta) !important;
+  color: #ffffff !important;
+}
+
+/* Primary Color Overrides */
+.bg-primary {
+  background-color: var(--it-magenta) !important;
+}
+
+.text-primary {
+  color: var(--it-magenta) !important;
+}
+
+.btn-primary {
+  background-color: var(--it-magenta) !important;
+  border-color: var(--it-magenta) !important;
+}
+
+.btn-primary:hover {
+  background-color: #b300b3 !important;
+  border-color: #b300b3 !important;
+}
