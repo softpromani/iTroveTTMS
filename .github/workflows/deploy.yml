@@ -20,6 +20,9 @@ jobs:
         with:
           node-version: lts/*  # Use latest LTS Node
 
+      - name: 📦 Install Composer dependencies
+        run: composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev
+
       - name: 📦 Install frontend dependencies
         run: |
           if [ -f package.json ]; then
