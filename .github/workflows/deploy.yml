@@ -81,6 +81,9 @@ jobs:
             php artisan view:clear
             echo "Checking pending migrations..."
 
+            # Delete the old sections migration if it still exists from a previous rsync without --delete
+            rm -f database/migrations/2026_05_25_131059_create_sections_table.php
+
             # PENDING=$(php artisan migrate:status --pending | grep -cE "^\|")
             
             # if [ "$PENDING" -gt 0 ]; then
